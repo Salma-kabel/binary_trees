@@ -20,6 +20,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		return (fparent);
 	if (second == first->parent)
 		return (sparent);
+	if (first == second)
+		return (sparent);
 	fparent = first->parent;
 	while (fparent != NULL)
 	{
