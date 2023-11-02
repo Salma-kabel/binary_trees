@@ -13,19 +13,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	binary_tree_t *fparent, *sparent;
 
 	fparent = (binary_tree_t *)first;
-	sparent = (binary_tree_t *)second;
-	if (first == NULL || second == NULL)
-		return (NULL);
-	if (first == second->parent)
-		return (fparent);
-	if (second == first->parent)
-		return (sparent);
-	if (first == second)
-		return (sparent);
-	fparent = first->parent;
 	while (fparent != NULL)
 	{
-		sparent = second->parent;
+		sparent = (binary_tree_t *)second;
 		while (sparent != NULL)
 		{
 			if (fparent == sparent)
